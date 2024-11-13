@@ -1,0 +1,11 @@
+app.get("/abc", (req, res) => {
+    res.json({"key": "value"});
+});
+
+/*
+    This route has to be placed at the end
+    (just before the listener)
+ */
+app.get("/*", (req, res) => {
+    res.sendFile("index.html");
+});
